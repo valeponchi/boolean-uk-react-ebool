@@ -1,0 +1,263 @@
+/* CSS defaults and resets */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background: unset;
+  border: unset;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: initial;
+}
+
+:root,
+::after {
+  --white: #fff;
+  --black: rgb(17, 24, 32);
+  --grey: #ccc;
+  --red: #e53238;
+  --blue: #0064d3;
+  --yellow: #f4ae01;
+  --green: #88b719;
+  --main-background: #f5f5f5;
+}
+
+/* General CSS */
+
+#root {
+  background-color: var(--main-background);
+  color: var(--black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.main-wrapper {
+  max-width: 1300px;
+}
+
+/* Header */
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  height: 100px;
+}
+
+.header__logo {
+  margin: 0 1rem;
+  font-size: 3.5rem;
+}
+
+.header::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 80%;
+  justify-self: center;
+  content: "";
+  border-bottom: 2px solid var(--border-colour);
+}
+
+.header__nav {
+  margin-left: 3rem;
+}
+
+.header__nav li {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.header__nav li:hover {
+  text-decoration: underline;
+}
+
+/* Products Container */
+
+.products-container {
+  margin: 3rem auto;
+}
+
+.products-container__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  justify-content: center;
+  grid-gap: 2rem;
+}
+
+/* Product Item */
+
+.product-item {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-row-gap: 2rem;
+  height: 100%;
+  padding: 2rem;
+  place-items: center;
+  background-color: var(--white);
+  border: 1px solid var(--grey);
+}
+
+.product-item h3 {
+  font-weight: 400;
+}
+
+/* Product Detail */
+.product-detail {
+  display: grid;
+  margin: 0 auto;
+  column-gap: 2rem;
+  grid-template-columns: 4fr 6fr;
+  padding: 2rem;
+  height: 100%;
+}
+
+.product-detail > img {
+  align-self: center;
+}
+
+.product-detail__side {
+  position: relative;
+  display: grid;
+  grid-template-rows: 20% auto;
+  align-content: start;
+  padding-left: 1rem;
+  border-left: 2px solid;
+}
+
+.product-detail__side h3 {
+  align-self: start;
+}
+
+.product-detail__side h2 {
+  margin: 1rem 0;
+}
+
+.product-detail__side p {
+  max-width: 50%;
+  max-height: 150ch;
+  margin-top: 1rem;
+  overflow-y: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-detail__side button {
+  max-width: 33%;
+  padding: 1rem;
+  border: 2px solid var(--black);
+  justify-self: end;
+  margin-top: 5rem;
+}
+
+.product-detail__side button:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+/* Categories */
+.categories-container {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.categories-container__list {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 2rem;
+  place-content: center;
+}
+
+.categories-container__list a {
+  display: grid;
+  height: 300px;
+  background-color: var(--random-colour);
+  place-items: center;
+  text-transform: capitalize;
+  text-align: center;
+  color: var(--white);
+  font-size: 2.5rem;
+}
+
+.categories-container__list a:hover {
+  color: var(--random-colour);
+  border: 2px solid var(--random-colour);
+  background-color: var(--white);
+}
+
+/* Basket */
+
+.basket-container {
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.basket-container > h2 {
+  margin: 2rem 0;
+  font-size: 2.5rem;
+}
+
+.basket-container > ul {
+  border: 1px solid var(--grey);
+  border-radius: 5px;
+  height: 60vh;
+  padding: 2rem;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background-color: var(--white);
+}
+
+.basket-container li {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-top: 1px solid var(--grey);
+}
+
+.basket-container li:last-of-type {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--grey);
+}
+
+.basket-container h3 {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  text-align: right;
+}
+
+.basket-container__item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 3fr 1fr 1fr;
+  column-gap: 2rem;
+}
