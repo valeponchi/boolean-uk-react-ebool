@@ -21,9 +21,8 @@ function CategoriesPage() {
 					<li>
 						<Link
 							key={category.name}
-							style="--random-colour: var(--yellow);"
 							to={`/categories/${category.id}`}
-							style={{ ['--border-colour']: `var(--${randColour()})` }}>
+							style={{ ['--random-colour']: `var(--${randColour()})` }}>
 							{category.name}
 						</Link>
 					</li>

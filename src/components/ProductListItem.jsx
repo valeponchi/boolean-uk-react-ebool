@@ -1,13 +1,16 @@
-function ProductListItem({ productDetails }) {
-	const { id, title, image } = productDetails
+import { Link } from 'react-router-dom'
+
+function ProductListItem({ product }) {
+	const { id, title, image } = product
+
 	return (
 		<li>
-			<a href={`/products/${id}`}>
-				<article class="product-item">
+			<Link to={`/products/${id}`}>
+				<article className="product-item">
 					<img src={image} alt={title} />
 					<h3>{title}</h3>
 				</article>
-			</a>
+			</Link>
 		</li>
 	)
 }
