@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import ProductListItem from '../components/ProductListItem'
 
 function ProductsPage() {
@@ -12,10 +13,15 @@ function ProductsPage() {
 		[]
 	)
 
+	const { search } = useParams()
+	const filterProducts = search
+		? products.filter(product => product.categoryId === Number(search))
+		: products
+
 	return (
 		<section className="products-container main-wrapper">
 			<ul className="products-container__list">
-				{products.map(product => (
+				{filterProducts.map(product => (
 					<ProductListItem product={product} />
 				))}
 			</ul>

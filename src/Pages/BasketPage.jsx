@@ -1,6 +1,6 @@
 import BasketItem from '../components/BasketItem'
 
-function BasketPage({ basket }) {
+function BasketPage({ basket, setBasket }) {
 	return (
 		<section className="basket-container">
 			<h2>Your Basket</h2>

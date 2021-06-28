@@ -15,10 +15,10 @@ function CategoriesPage() {
 	)
 
 	return (
-		<section class="categories-container main-wrapper">
-			<ul class="categories-container__list">
+		<section className="categories-container main-wrapper">
+			<ul className="categories-container__list">
 				{categories.map(category => (
-					<li>
+					<li key={category.name}>
 						<Link
 							key={category.name}
 							to={`/categories/${category.id}`}

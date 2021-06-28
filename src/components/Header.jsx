@@ -13,17 +13,14 @@ export default function Header() {
 			</div>
 			<nav className="header__nav">
 				<ul>
-					<li>
-						<Link to="/" />
-						Home
+					<li key={0}>
+						<Link to="/">Home</Link>
 					</li>
-					<li>
-						<Link to="/categories" />
-						Categories
+					<li key={1}>
+						<Link to="/categories">Categories</Link>
 					</li>
-					<li>
-						<Link to="/basket" />
-						Basket
+					<li key={2}>
+						<Link to="/basket">Basket</Link>
 					</li>
 				</ul>
 			</nav>

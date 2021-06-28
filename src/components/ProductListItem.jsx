@@ -4,7 +4,7 @@ function ProductListItem({ product }) {
 	const { id, title, image } = product
 
 	return (
-		<li>
+		<li key={product.id}>
 			<Link to={`/products/${id}`}>
 				<article className="product-item">
 					<img src={image} alt={title} />
